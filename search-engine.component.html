@@ -1,0 +1,86 @@
+<div class="search-container">
+    <div class="search-tabs">
+      <button [class.active]="!isAIMode" (click)="isAIMode = false">חיפוש רגיל</button>
+      <button [class.active]="isAIMode" (click)="isAIMode = true">חיפוש  AI 🤖</button>
+    </div>
+  
+    <div class="wraper-search">
+      <div class="search-content" *ngIf="!isAIMode">
+         
+          <div id="input-group" class=" container">
+            <div class="row">
+              <div class="input-field col-xl-3 col-lg-6 col-md-6">
+                <label>מוצא</label>
+                <input type="text" id="originIN" list="origins" [(ngModel)]="chosenOriginToDisplay" (input)="onGeneralInput($event,true)" (click)="onClickToSelectText($event)" (focus)="onFocusWithFlag(true)" >
+                <div *ngIf="isdropDownList" style="position: relative;" class="container">
+                  <div class="row">
+                    <div class="cardd" >
+                      <!-- <div class="cardd-header">בחר מוצא</div> -->
+                      <ul class="cardd-list">
+                        <li [class.mark]="item.isPopular" (click)="pickFromAutoCompleteList($event,true)" *ngFor="let item of listOriginsFilterd" id="{{item.id}}">{{item.isPopular? item.name+' ⭐':item.name}}</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="input-field col-xl-3 col-lg-6 col-md-6">
+                <label>יעד</label>
+                <input type="text" id="destinationIN" placeholder="Mexico City.."  [(ngModel)]="chosenDestToDisplay" (input)="onGeneralInput($event,false)" (click)="onClickToSelectText($event)" (focus)="onFocusWithFlag(false)" >
+                <div *ngIf="isdropDownList_dest" style="position: relative;" class="container">
+                  <div class="row">
+                    <div class="cardd" >
+                      <ul class="cardd-list">
+                        <li [class.mark]="item.isPopular" (click)="pickFromAutoCompleteList($event,false)" *ngFor="let item of listDestinationsFilterd" id="{{item.id}}">{{item.isPopular? item.name+' ⭐':item.name}}</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+  
+  
+  
+                <!-- <input placeholder="Mexico City.." [(ngModel)]="chosenDestToDisplay" type="text" list="destinations"  (change)="onDestChange($event)">
+                <datalist  id="destinations" >
+                    <option [class.mark]="item.isPopular" *ngFor="let item of listDestinations" id="{{item.id}}">{{item.isPopular? item.name+' ⭐':item.name}}</option>
+                </datalist> -->
+              </div>
+              <div class="input-field col-xl-2 col-lg-4 col-md-4">
+                <label>תאריך התחלה</label>
+                <input type="date" [(ngModel)]="startDate" (change)="ChangeDepDateEvent($event)" [min]="getDateWithDays(1)" [max]="getDateWithDays(361)">
+              </div>
+              <div class="input-field col-xl-2 col-lg-4 col-md-4">
+                <label>תאריך חזור</label>
+                <input type="date"  [(ngModel)]="untilDate" (change)="ChangeReDateEvent($event)" [min]="getMinimumReturnDate()" [max]="getDateWithDays(365)">
+              </div>
+    
+              <div class="input-field col-xl-2 col-lg-4 col-md-4">
+                <label>כמות נוסעים</label>
+                <input value="2" min="1" max="9" type="number" name="" id="" [(ngModel)]="amountofPass" (change)="passengerChange($event)">
+              </div>
+            </div> 
+  
+          </div>
+        </div>
+      
+        <div class="search-content" *ngIf="isAIMode">
+          <div class="ai-input">
+            <textarea [(ngModel)]="searchQuery" placeholder="למשל: בא לי טיסה זולה למקום מגניב עם חברה שלי"></textarea>
+          </div>
+        </div>
+      
+        <!-- <button class="search-button">מצא לי דיל ✈️</button> -->
+        <button class="wow-button" (click)="sendBtnClicked()">
+          <span class="btn-text">מצא לי דיל ✈️</span>
+          <span class="particle p1"></span>
+          <span class="particle p2"></span>
+          <span class="particle p3"></span>
+          <span class="particle p4"></span>
+          <span class="particle p5"></span>
+          <span class="particle p6"></span>
+        </button>
+    </div>
+  
+  </div>
+  
+  
+  
+  

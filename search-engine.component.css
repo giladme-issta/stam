@@ -1,0 +1,290 @@
+
+
+.search-container {
+    background: linear-gradient(128deg, rgb(42 153 61 / 62%) 25%, rgb(42 89 54 / 77%) 100%);
+    background-image: url('../../assets/bg1.jpeg');
+    background-size:cover;
+    background-position:center ;
+    background-repeat: no-repeat;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    direction: rtl;
+    margin-inline: 15px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+.search-tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+@media (max-width: 768px) {
+  .search-tabs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    justify-content: center;
+  }
+}
+.mark {
+    background-color: lightyellow;
+}
+
+.search-tabs button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  background: rgba(255, 255, 255, 0.2);
+  color: #333;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+
+}
+
+.search-tabs button.active {
+  background: white;
+  font-weight: bold;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
+}
+
+.search-content {
+  background: rgb(255 255 255 / 67%);
+  padding: 1.1rem;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  width: 87%;
+}
+
+.input-group {
+  /* display: flex;
+  gap: 1.5rem;
+  align-items: flex-end;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap; */
+  padding-inline: 0px;
+}
+
+/* .input-field {
+  flex: 1;
+} */
+
+.input-field label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.input-field input {
+  width: 95%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  font-size: 0.95rem;
+}
+.input-field input:focus-visible{
+  outline: none;
+}
+.wraper-search{
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+}
+
+.ai-input textarea {
+  width: 100%;
+  height: 100px;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1.25rem;
+  resize: none;
+  font-family: system-ui;
+}
+
+.search-button {
+    background: rgb(97 193 96);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.search-button:hover {
+    background: rgb(225 206 57);
+    color: darkgreen;
+  transform: translateY(-2px);
+}
+
+
+
+
+
+/* 
+*******************************************************
+*******************************************************
+*******************************************************
+*******************************************************
+******************************************************* */
+.wow-button {
+  position: relative;
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.wow-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
+}
+
+.btn-text {
+  position: relative;
+  z-index: 2;
+}
+
+/* Particle element defaults */
+.particle {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  border-radius: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+/* Particle burst animation */
+@keyframes particleBurst {
+  from {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+  }
+  to {
+      opacity: 0;
+      transform: translate(calc(-50% + var(--tx)), calc(-50% + var(--ty))) scale(0.5);
+  }
+}
+
+/* Trigger particle animation on hover */
+.wow-button:hover .particle {
+  animation: particleBurst 0.9s ease-out forwards;
+}
+
+/* Define each particle's travel distance and delay */
+/* Define each particle's travel distance and delay */
+.p1 { --tx: -60px; --ty: -60px; animation-delay: 0s; }
+.p2 { --tx: 60px;  --ty: -60px; animation-delay: 0.1s; }
+.p3 { --tx: -75px; --ty: 0px;  animation-delay: 0.2s; }
+.p4 { --tx: 75px;  --ty: 0px;  animation-delay: 0.3s; }
+.p5 { --tx: -60px; --ty: 60px; animation-delay: 0.4s; }
+.p6 { --tx: 60px;  --ty: 60px; animation-delay: 0.5s; }
+
+
+
+
+
+
+.cardd {
+  background: white;
+  /* width: 230px; */
+  /* min-width: 120px; */
+  border-bottom-right-radius:35px;
+  border-bottom-left-radius:35px;
+  /* border-top-left-radius:35px; */
+
+  width: 95%;
+  position: absolute !important;
+  z-index: 5;
+  /* right:75px;
+  top: -8px; */
+  top: -0px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  padding: 0;
+  padding-bottom: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cardd:hover {
+  /* transform: translateY(-5px); */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+/* Bubble Tail */
+.cardd::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 15px;
+  width: 20px;
+  height: 20px;
+  background: white;
+  clip-path: polygon(0% 100%, 100% 100%, 50% 0%);
+  box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.cardd-header {
+  background: #007bff7c;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  font-size: 18px;
+  font-weight:800;
+  border-top-left-radius: 12px;
+  /* border-top-right-radius: 12px; */
+}
+
+.cardd-list {
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+}
+
+.cardd-list li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.cardd-list li:hover {
+  background: #007bff71;
+  color: white;
+  font-weight: 700;
+}
+
+.cardd-list li:last-child {
+  border-bottom: none;
+}
