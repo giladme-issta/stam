@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Date Range Picker</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Custom Date Range Picker</h1>
+        
+        <div class="datepicker-container">
+            <div class="datepicker-input-container">
+                <input type="text" id="date-range" class="date-input" placeholder="Select date range" readonly>
+            </div>
+            
+            <div id="datepicker" class="datepicker">
+                <div class="datepicker-header">
+                    <button id="prev-month" class="nav-button">⬅️</button>
+                    <div class="current-month-year">
+                        <span id="current-month"></span>
+                        <span id="current-year" class="year-selector"></span>
+                    </div>
+                    <button id="next-month" class="nav-button">➡️</button>
+                </div>
+                
+                <!-- Year selection panel -->
+                <div id="year-selector-panel" class="year-selector-panel">
+                    <div class="year-selector-header">
+                        <button id="prev-years" class="nav-button">⬅️</button>
+                        <span id="year-range-display"></span>
+                        <button id="next-years" class="nav-button">➡️</button>
+                    </div>
+                    <div id="years-grid" class="years-grid"></div>
+                </div>
+                
+                <div class="weekdays">
+                    <div>Sun</div>
+                    <div>Mon</div>
+                    <div>Tue</div>
+                    <div>Wed</div>
+                    <div>Thu</div>
+                    <div>Fri</div>
+                    <div>Sat</div>
+                </div>
+                <div id="calendar-days" class="days"></div>
+                <div class="datepicker-footer">
+                    <button id="clear-dates" class="btn">Clear</button>
+                    <button id="apply-dates" class="btn btn-apply">Apply</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+</html>
